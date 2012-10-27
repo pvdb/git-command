@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+
+begin
+  require 'git-command'
+rescue LoadError
+  require 'rubygems'
+  require 'git-command'
+end
+
+options = Trollop::options do
+
+  version Git::Command::COPYRIGHT
+  banner Git::Command::BANNER
+
+end
+
+fail "Coming soon!"
+
+# That's all, Folks!
