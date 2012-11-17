@@ -18,6 +18,7 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = "--format d --color"
 end
+
 task :rspec => [:spec]
 
 require 'cucumber'
@@ -26,5 +27,6 @@ require 'cucumber/rake/task'
 Cucumber::Rake::Task.new(:features) do |t|
   t.cucumber_opts = "features --format pretty --tags ~@wip"
 end
+
 task :cucumber => [:features]
 

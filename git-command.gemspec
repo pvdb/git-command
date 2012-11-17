@@ -17,19 +17,34 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_dependency('methadone')
   gem.add_dependency('rugged')
   gem.add_dependency('trollop')
 
-  gem.add_development_dependency('pry')
+  # for developing
+  gem.add_development_dependency('rdoc')
   gem.add_development_dependency('awesome_print')
-  gem.add_development_dependency('cucumber')
+
+  # for debugging
+  gem.add_development_dependency('pry')
+  gem.add_development_dependency('pry-debugger')
+  gem.add_development_dependency('pry-stack_explorer')
+
+  # for testing
   gem.add_development_dependency('rspec')
+  gem.add_development_dependency('cucumber')
   gem.add_development_dependency('aruba')
-  gem.add_development_dependency('methadone')
+
+  # for monitoring
+  gem.add_development_dependency('guard')
+  gem.add_development_dependency('growl')
+  gem.add_development_dependency('rb-fsevent')
+  gem.add_development_dependency('rb-readline')
+
+  # for TDD/BDD/CI
   gem.add_development_dependency('guard-rspec')
   gem.add_development_dependency('guard-cucumber')
-  gem.add_development_dependency('rb-fsevent')
-  gem.add_development_dependency('growl')
   gem.add_development_dependency('rspec-pride')
   gem.add_development_dependency('cucumber-pride')
+
 end
